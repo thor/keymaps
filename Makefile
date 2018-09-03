@@ -14,12 +14,15 @@ prepare: | $(KEYMAP_DIR)
 	ln -sf $(HERE)/planck_rules.mk $(KEYMAP_DIR)/rules.mk
 	ln -sf $(HERE)/planck_config.h $(KEYMAP_DIR)/config.h
 
+build: | prepare
+	cd $(QMK_DIR) && CFLAGS=-Wno-attribute-alias make $(KEYBOARD):$(KEYMAP)
+
 flash: | prepare
-	cd $(QMK_DIR) && make $(KEYBOARD):$(KEYMAP)
+	cd $(QMK_DIR) && CFLAGS=-Wno-attribute-alias make $(KEYBOARD):$(KEYMAP):dfu
 
 update: 
 	cd $(KEYMAP_DIR) && git pull --ff-only
 
 clean:
-	cd $(KEYMAP_DIR) && make clean
+	cd $(QMK_DIR) && make clean
 

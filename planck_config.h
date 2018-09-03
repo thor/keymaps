@@ -3,6 +3,18 @@
 
 #include "config_common.h"
 
+/*
+ * Enable NKRO
+ */
+//#define FORCE_NKRO
+
+/*
+ * Correct parenthesis for Shift-keys
+ */
+#define LSPO_KEY KC_8
+#define RSPC_KEY KC_9
+
+
 #ifdef AUDIO_ENABLE
     #define STARTUP_SONG SONG(PLANCK_SOUND)
     // #define STARTUP_SONG SONG(NO_SOUND)
