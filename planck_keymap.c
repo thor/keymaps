@@ -46,6 +46,7 @@ enum planck_keycodes {
  * Aliases for complex keys
  */
 #define ESC_CTL MT(MOD_LCTL, KC_ESC)
+#define QUOT_CTL MT(MOD_LCTL, KC_QUOT)
 #define L_LGUI LT(_LOWER, KC_LGUI)
 #define L_BSPC LT(_LOWER, KC_BSPC)
 #define L_DEL LT(_LOWER, KC_DEL)
@@ -59,6 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Tab  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  |  [   |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * | Esc  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  "   |
+ * | Ctrl |      |      |      |      |      |      |      |      |      |      | Ctrl |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Shift |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -67,10 +69,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_planck_grid(
-    KC_TAB,  KC_Q,    KC_W,    KC_E,  KC_R,   KC_T,   KC_Y,   KC_U,  KC_I,    KC_O,    KC_P,    KC_LBRC,
-    ESC_CTL, KC_A,    KC_S,    KC_D,  KC_F,   KC_G,   KC_H,   KC_J,  KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-    KC_LSPO, KC_Z,    KC_X,    KC_C,  KC_V,   KC_B,   KC_N,   KC_M,  KC_COMM, KC_DOT,  KC_SLSH, KC_RSPC,
-    KC_LCTL, KC_NUBS, KC_LGUI, KC_LGUI, KC_BSPC, L_DEL, R_ENT, KC_SPC, RAISE,   KC_DOWN, KC_UP,   KC_RGHT
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,  KC_Y,  KC_U,   KC_I,    KC_O,    KC_P,    KC_LBRC,
+    ESC_CTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,  KC_H,  KC_J,   KC_K,    KC_L,    KC_SCLN, QUOT_CTL,
+    KC_LSPO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  KC_N,  KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RSPC,
+    KC_LCTL, KC_NUBS, KC_LALT, KC_LGUI, KC_BSPC, L_DEL, R_ENT, KC_SPC, RAISE,   KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Colemak
